@@ -36,6 +36,7 @@ AM_CONDITIONAL(DEBUG, test x$debug = xtrue)
 
 CFLAGS_COMMON="-std=c++14 -Wall -fPIC -Wno-write-strings -I/usr/include/libnl3 -I/usr/include/swss"
 
+CFLAGS_COMMON+=" -I/opt/bfn/install/include/bf_switch/sai"
 CFLAGS_COMMON+=" -Werror"
 CFLAGS_COMMON+=" -Wno-reorder"
 CFLAGS_COMMON+=" -Wcast-align"
@@ -86,9 +87,5 @@ AC_CONFIG_FILES([
     cfgmgr/Makefile
     tests/Makefile
 ])
-
-# If no SAI library is installed, compile with SAIVS and run unit tests
-AM_COND_IF([HAVE_SAI],[],
-           [AC_CONFIG_FILES([tests/mock_tests/Makefile])])
 
 AC_OUTPUT

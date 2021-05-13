@@ -9,7 +9,7 @@ TESTS = tests
 
 noinst_PROGRAMS = tests
 
-LDADD_SAI = -lsaimeta -lsaimetadata -lsaivs -lsairedis
+LDADD_SAI = -lsaimeta -lsaimetadata -lsairedis
 
 if DEBUG
 DBGFLAGS = -ggdb -DDEBUG
